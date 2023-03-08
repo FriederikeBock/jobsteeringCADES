@@ -40,7 +40,7 @@ echo "outDir = $outDir"
 #skip=$(($ifileLeadingZero * $nEvents))
 #echo "skip = $skip"
 
-if [ $runSteps == "full" | $runSteps == "dd4hep" ]; then 
+if [ $runSteps == "full" ] || [ $runSteps == "dd4hep" ]; then 
   if [ $runAngle == 0 ]; then 
     echo "running forward pseudorapidity"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
@@ -51,7 +51,7 @@ if [ $runSteps == "full" | $runSteps == "dd4hep" ]; then
   fi 
 fi
 
-if [ $runSteps == "full" | $runSteps == "eicrecon" ]; then 
+if [ $runSteps == "full" ] || [ $runSteps == "eicrecon" ]; then 
   source ${EPIC_ROOT}/epic-eicrecon/bin/eicrecon-this.sh
   #rm -rf calibrations/*
 
