@@ -36,13 +36,13 @@ nEvents=200
 #./create_job.sh 10000 0.1 50.0 2. 178. arches_trks_noTOF e- trackers_only_noTOF_${currbatch} 200 false
 #./create_job.sh 15000 0.1 50.0 2. 178. arches_trks_noTOF proton trackers_only_noTOF_${currbatch} 200 false
 
-for energy in 1 2 ; do
+# for energy in 1 2 ; do
 # for energy in 1 2 3 4 5 6 7 8 9 10 12 14 16 18 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 125 145; do 
-# for energy in 5 10 16 20 30; do
-#   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_studies_$energy\GeV 0 dd4hep 25 $overwriteoutput
-#   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_studies_$energy\GeV 0 dd4hep 25 $overwriteoutput
+for energy in 5 10 16 20 30; do
+#   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_studies_$energy\GeV 0 full 25 $overwriteoutput
+#   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_studies_$energy\GeV 0 full 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 eicrecon 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 eicrecon 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 full 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 full 25 $overwriteoutput
 done
