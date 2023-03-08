@@ -2,9 +2,9 @@
 
 date
 
-if [ $# != 10 ]; then
+if [ $# != 12 ]; then
      echo "This script needs 12 parameters !"
-     echo "Parameters: nEvents, particlemomMin, particlemomMax, particleThetaMin, particleThetaMax, detectorXML, generatorSetting, customName, njobs, cleanPreviousSimulations"
+     echo "Parameters: nEvents, particlemomMin, particlemomMax, particleThetaMin, particleThetaMax, detectorXML, generatorSetting, customName, runAnlge, runSteps, njobs, cleanPreviousSimulations"
      exit 0
 fi
 echo ${@}
