@@ -42,9 +42,11 @@ echo "outDir = $outDir"
 
 if [ $runSteps == "full" | $runSteps == "dd4hep" ]; then 
   if [ $runAngle == 0 ]; then 
+    echo "npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
   else 
     # 45 deg on calo
+    echo "npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.position "(0.,0.,3000)" --gun.direction "(1.,1.,1.)" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.position "(0.,0.,3000)" --gun.direction "(1.,1.,1.)" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
   fi 
 fi
