@@ -72,17 +72,18 @@ nNodes=$(((${njobs} + 32 - 1) / 32))
 tasksPerNode=$(((${njobs} + ${nNodes} - 1) / ${nNodes}))
 
 # Now, implement steering script for slurm
-#SBATCH --tasks-per-node=1
+#SBATCH --tasks-per-node=1 
+# queues testing , high_mem_cd, burst, gpu
 cat > ${slurmJobConfig} <<- _EOF_
 #!/usr/bin/env bash
 #SBATCH -A birthright
-#SBATCH -p burst
+#SBATCH -p high_mem_cd
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 1
 #SBATCH -J eic-dd4hep-sim
-#SBATCH --mem=4G
-#SBATCH -t 4:00:00
+#SBATCH --mem=6G
+#SBATCH -t 6:00:00
 #SBATCH -o ${logDir}/%A-%a.stdout
 #SBATCH -e ${logDir}/%A-%a.stderr
 

@@ -41,6 +41,8 @@ for energy in 1 2 ; do
 # for energy in 5 10 16 20 30; do
 #   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_studies_$energy\GeV 0 dd4hep 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_studies_$energy\GeV 0 dd4hep 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
+#   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
+#   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 dd4hep 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 1 eicrecon 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 1 eicrecon 25 $overwriteoutput
 done
