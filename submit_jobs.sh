@@ -1,0 +1,44 @@
+#!/bin/bashselect 
+#only trackers = 0.25s/evt -> 10k evt in 45 minutes
+#rm -rf calibrations/*
+currbatch=1
+overwriteoutput=false
+nEvents=500
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_wTOF_700umEC_3cmBRL pi- trackers_only_wTOF_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_wTOF_800um pi- trackers_only_wTOF_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_wTOF_1000umEC_2cmBRL pi- trackers_only_wTOF_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_wTOF pi- trackers_only_wTOF_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_noTOF pi- trackers_only_noTOF_1 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 50.0 2. 178. arches_trks_noTOF pi- trackers_only_noTOF_${currbatch} 200 $overwriteoutput
+
+#./create_job.sh $nEvents 0.1 10.0 2. 178. arches_trks_wTOF pi- trackers_only_wTOF_TOFstudies_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 178. arches_trks_wTOF kaon- trackers_only_wTOF_TOFstudies_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 178. arches_trks_wTOF proton trackers_only_wTOF_TOFstudies_${currbatch} 200 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 178. arches_trks_wTOF e- trackers_only_wTOF_TOFstudies_${currbatch} 200 $overwriteoutput
+
+
+#./create_job.sh $nEvents 0.1 10.0 2. 45. arches_trks_wTOF pi- trackers_only_wTOF_TOFstudiesFwd_${currbatch} 400 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 45. arches_trks_wTOF kaon- trackers_only_wTOF_TOFstudiesFwd_${currbatch} 400 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 45. arches_trks_wTOF proton trackers_only_wTOF_TOFstudiesFwd_${currbatch} 400 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 45. arches_trks_wTOF e- trackers_only_wTOF_TOFstudiesFwd_${currbatch} 400 $overwriteoutput
+#./create_job.sh $nEvents 0.1 10.0 2. 45. gfhcal_only pi- gfhcal_studies_${currbatch} 20 $overwriteoutput
+
+
+
+#./create_job.sh 200 0.1 50.0 2. 178. arches_trks_wTOF pi- trackers_only_wTOF_testing_${currbatch} 5 true
+
+
+#./create_job.sh 15000 0.1 50.0 2. 178. arches_trks_wTOF kaon- trackers_only_wTOF_${currbatch} 200 false
+#./create_job.sh 10000 0.1 50.0 2. 178. arches_trks_wTOF e- trackers_only_wTOF_${currbatch} 200 false
+#./create_job.sh 15000 0.1 50.0 2. 178. arches_trks_wTOF proton trackers_only_wTOF_${currbatch} 200 false
+
+#./create_job.sh 15000 0.1 50.0 2. 178. arches_trks_noTOF kaon- trackers_only_noTOF_${currbatch} 200 false
+#./create_job.sh 10000 0.1 50.0 2. 178. arches_trks_noTOF e- trackers_only_noTOF_${currbatch} 200 false
+#./create_job.sh 15000 0.1 50.0 2. 178. arches_trks_noTOF proton trackers_only_noTOF_${currbatch} 200 false
+
+for energy in 1 2 ; do
+# for energy in 3 4 5 6 7 8 9 10 12 14 16 18 20 ; do
+# for energy in 25 30 35 40 45 50 55 60 65 70; do
+# for energy in 75 80 85 90 95 100 125 145 ; do
+  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_studies_$energy\GeV 0 eicrecon 10 $overwriteoutput
+done
