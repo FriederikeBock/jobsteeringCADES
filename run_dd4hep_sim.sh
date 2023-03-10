@@ -44,15 +44,15 @@ if [ $runSteps == "full" ] || [ $runSteps == "dd4hep" ]; then
   if [ $runAngle == "full" ]; then 
     echo "running forward pseudorapidity"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
-  else if [ $runAngle == "45deg" ]; then 
+  elif [ $runAngle == "45deg" ]; then 
     # 45 deg on calo
     echo "running 1 point on forward hcal"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.position "(0.,0.,3000)" --gun.direction "(1.,1.,1.)" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
-  else if [ $runAngle == "xaxis" ]; then 
+  elif [ $runAngle == "xaxis" ]; then 
     # xaxis on calo
     echo "running along x-axis on forward hcal"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.phiMin "0.0" --gun.phiMax "0.01" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
-  else if [ $runAngle == "yaxis" ]; then 
+  else 
     # yaxis on calo
     echo "running along y-axis on forward hcal"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.phiMin "1.48" --gun.phiMax "1.66" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
