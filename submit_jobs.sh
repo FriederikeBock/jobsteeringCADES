@@ -39,14 +39,14 @@ nEvents=200
 # for energy in 1 2 ; do
 # for energy in 1 2 3 4 5 6 7 8 9 10 12 14 16 18 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 125 145; do 
 for energy in 5 10 16 20 30; do
-#   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_studies_$energy\GeV full full 25 $overwriteoutput
+   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_morelayers_$energy\GeV full full 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_studies_$energy\GeV full full 25 $overwriteoutput
-#   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 45deg dd4hep 25 $overwriteoutput
+   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45degMoreLayers_$energy\GeV 45deg full 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 45deg dd4hep 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45deg_$energy\GeV 45deg full 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_45deg_$energy\GeV 45deg full 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_xaxis_$energy\GeV xaxis full 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_xaxis_$energy\GeV xaxis full 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
+#  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_xaxis_$energy\GeV xaxis full 25 $overwriteoutput
+#  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_xaxis_$energy\GeV xaxis full 25 $overwriteoutput
+#  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
+#  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
 done
