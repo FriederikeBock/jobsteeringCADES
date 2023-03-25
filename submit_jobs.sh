@@ -38,7 +38,8 @@ nEvents=200
 
 # for energy in 1 2 ; do
 # for energy in 1 2 3 4 5 6 7 8 9 10 12 14 16 18 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 125 145; do 
-for energy in 1 2 5 10 16 20 30; do
+for energy in 3 4 6 7 8 9 12 14 18 25 35 40 45 50 55 60 65 70 75 80 85 90 95 100 125 145; do 
+# for energy in 1 2 5 10 16 20 30; do
 #    ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_morelayers_$energy\GeV full full 25 $overwriteoutput
 #   ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_steelonly_$energy\GeV full full 25 $overwriteoutput
 #    ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_45degMoreLayers_$energy\GeV 45deg full 25 $overwriteoutput
