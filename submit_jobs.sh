@@ -49,7 +49,7 @@ for energy in 1 2 5 10 16 20 30; do
 #  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_xaxis_$energy\GeV xaxis full 25 $overwriteoutput
 #  ./create_job.sh $nEvents $energy $energy 2. 35. gfhcal_only pi- gfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
 #  ./create_job.sh $nEvents $energy $energy 2. 35. lfhcal_only pi- lfhcal_yaxis_$energy\GeV yaxis full 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. forwardNew e- fecalandlfhcal_steelonly_$energy\GeV full fullB 25 $overwriteoutput
-  ./create_job.sh $nEvents $energy $energy 2. 35. forwardNew pi- fecalandlfhcal_steelonly_$energy\GeV full fullB 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. forwardNew e- fecal_$energy\GeV full fullB 25 $overwriteoutput
+  ./create_job.sh $nEvents $energy $energy 2. 35. forwardNew pi- fecal_steelonly_$energy\GeV full fullB 25 $overwriteoutput
 
 done

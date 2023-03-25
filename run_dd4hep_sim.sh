@@ -78,5 +78,11 @@ if [ $runSteps == "fullB" ] || [ $runSteps == "eicreconB" ]; then
   outputFileeicreconHists="eicrecon_histograms_${detectorXML}_${customName}_${generatorSetting}_${nEvents}_${ifileLeadingZero}.ana.root"
   mkdir -p ${outDir}_eicrecon
   # run eicrecon
-  eicrecon -Ppodio:output_file=${outDir}_eicrecon/${outputFileeicrecon} -Phistsfile=${outDir}_eicrecon/$outputFileeicreconHists -Pplugins=lfhcal_studies,fecal_studies -Pdd4hep:xml_files=$DETECTOR_PATH/epic_$detectorXML.xml ${outDir}/${outputFile}
+  eicrecon -Ppodio:output_file=${outDir}_eicrecon/${outputFileeicrecon} -Phistsfile=${outDir}_eicrecon/$outputFileeicreconHists -Pplugins=fecal_studies -Pdd4hep:xml_files=$DETECTOR_PATH/epic_$detectorXML.xml ${outDir}/${outputFile}
+  outputFileeicrecon="eicrecon_${detectorXML}_${customName}_${generatorSetting}_${nEvents}_${ifileLeadingZero}.ana.edm4hep.root"
+  outputFileeicreconHists="eicrecon_histogramsLF_${detectorXML}_${customName}_${generatorSetting}_${nEvents}_${ifileLeadingZero}.ana.root"
+  mkdir -p ${outDir}_eicrecon
+  # run eicrecon
+  eicrecon -Ppodio:output_file=${outDir}_eicrecon/${outputFileeicrecon} -Phistsfile=${outDir}_eicrecon/$outputFileeicreconHists -Pplugins=lfhcal_studies -Pdd4hep:xml_files=$DETECTOR_PATH/epic_$detectorXML.xml ${outDir}/${outputFile}
+
 fi
