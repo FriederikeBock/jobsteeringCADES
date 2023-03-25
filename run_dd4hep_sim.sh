@@ -40,7 +40,7 @@ echo "outDir = $outDir"
 #skip=$(($ifileLeadingZero * $nEvents))
 #echo "skip = $skip"
 
-if [ $runSteps == "full" ] || [ $runSteps == "dd4hep" ]; then 
+if [ $runSteps == "full" ] || [ $runSteps == "dd4hep" ] || [ $runSteps == "fullB" ]; then 
   if [ $runAngle == "full" ]; then 
     echo "running forward pseudorapidity"
     npsim --compactFile $DETECTOR_PATH/epic_$detectorXML.xml -G -N $nEvents --gun.thetaMin "$particleThetaMin*deg" --gun.thetaMax "$particleThetaMax*deg" --gun.distribution "pseudorapidity" --gun.momentumMin "$particlemomMin*GeV" --gun.momentumMax "$particlemomMax*GeV" --gun.particle "$generatorSetting" --outputFile ${outDir}/${outputFile}
